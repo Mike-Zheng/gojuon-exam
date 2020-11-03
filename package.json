@@ -2,8 +2,8 @@
   "name": "J-learn",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --base=/gojuon-exam/",
-    "build": "vite build --base=/gojuon-exam/"
+    "dev": "vite --base=/gojuon-exam/  --assetsDir=assets",
+    "build": "vite build --base=/gojuon-exam/ --assetsDir=assets"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
