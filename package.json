@@ -1,0 +1,20 @@
+{
+  "name": "J-learn",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --base=/gojuon-exam/",
+    "build": "vite build --base=/gojuon-exam/"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "vue": "^3.0.2"
+  },
+  "devDependencies": {
+    "vite": "^1.0.0-rc.8",
+    "@vue/compiler-sfc": "^3.0.2"
+  }
+}
+
+
+
+
