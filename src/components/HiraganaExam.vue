@@ -28,9 +28,6 @@
 import { basic } from "../gojuon.js";
 export default {
   name: "HiraganaExam",
-  props: {
-    msg: String,
-  },
   data() {
     return {
       gojuon: basic,
@@ -130,6 +127,7 @@ export default {
   height: 60px;
   border: 1px solid #ccc;
   margin: -1px;
+  font-size: 18px;
 }
 .word-card.correct {
   border: 1px solid #5bde30;
