@@ -1,5 +1,5 @@
 {
-  "name": "J-learn",
+  "name": "gojuon-exam",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --base=/gojuon-exam/  --assetsDir=assets",
