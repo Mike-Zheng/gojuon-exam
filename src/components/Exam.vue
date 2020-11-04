@@ -147,7 +147,6 @@ export default {
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  font-weight: 300;
   width: 60px;
   height: 60px;
   border: 1px solid #ccc;
