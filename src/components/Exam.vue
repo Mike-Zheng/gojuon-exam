@@ -63,8 +63,7 @@ export default {
 
       while (this.textList.length < this.textLength) {
         const index = this.getRandomInt(0, 50);
-
-        if (this.gojuon[index].roma != "") {
+        if (this.gojuon[index].roma !== "") {
           this.textList.push({
             ...this.gojuon[index],
             ...{ inputValue: "", isAnsCorrect: 0, showAns: false },
@@ -94,7 +93,6 @@ export default {
 
       // error
       const stringLength = item.inputValue.length;
-
       for (let i = 0; i < stringLength; i++) {
         if (item.inputValue[i] !== item.roma[i]) {
           item.isAnsCorrect = -1;
@@ -136,7 +134,6 @@ export default {
   height: 600px;
   flex-direction: column;
 }
-
 .board.horizontal {
   width: 1200px;
   flex-direction: row;
@@ -155,15 +152,12 @@ export default {
 }
 .word-card.correct {
   border: 1px solid #5bde30;
-
   background-color: #d6ffc8;
 }
 .word-card.wrong {
   border: 1px solid rgb(249 63 63);
-
   background-color: #e8bbbb;
 }
-
 .input-exam {
   width: 50px;
 }

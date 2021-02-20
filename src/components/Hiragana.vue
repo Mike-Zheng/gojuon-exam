@@ -25,7 +25,6 @@ export default {
 <style>
 .board {
   display: flex;
- 
   flex-wrap: wrap;
   justify-content: center;
   align-content: stretch;
@@ -33,12 +32,11 @@ export default {
 }
 .board.landscape {
   height: 600px;
-   flex-direction: column;
+  flex-direction: column;
 }
-
 .board.horizontal {
   width: 600px;
-   flex-direction: row;
+  flex-direction: row;
 }
 .word-card {
   display: flex;
