@@ -1,5 +1,4 @@
 <template>
-    <div style="margin-top: 20px">{{ corrected.length }}/{{ textLength }}</div>
     <div class="board horizontal">
         <div
             class="word-card"
@@ -13,7 +12,7 @@
             <span v-if="examType == 'hiragana'">{{ item.hira_unicode }}</span>
             <span v-if="examType == 'katakana'">{{ item.kata_unicode }}</span>
 
-            <span v-if="item.showAns">{{ item.roma }}</span>
+            <div class="input-exam" v-if="item.showAns">{{ item.roma }}</div>
             <input
                 v-else
                 :ref="'input' + index"
@@ -22,6 +21,10 @@
                 @input="validAns($event, item, index)"
             />
         </div>
+    </div>
+
+    <div class="footer">
+        <div class="text">{{ corrected.length }}/{{ textLength }}</div>
     </div>
 </template>
 
@@ -114,6 +117,9 @@ export default {
                 nextRef.focus();
             });
         },
+        reset(){
+            this.init()
+        }
     },
 };
 </script>
@@ -123,39 +129,79 @@ export default {
     display: flex;
     margin: 30px auto;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     align-content: stretch;
     align-items: stretch;
 }
 .board.landscape {
-    height: 600px;
+    height: 100%;
     flex-direction: column;
 }
 .board.horizontal {
-    width: 1200px;
+    width: 100%;
     flex-direction: row;
 }
 .word-card {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     justify-content: center;
     align-items: center;
     width: 60px;
-    height: 60px;
-    /* border: 1px solid #ccc; */
-    margin: -1px;
-    font-size: 18px;
+    height: 70px;
+    color: #00b9df;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 10px;
 }
 .word-card.correct {
-    border: 1px solid #5bde30;
-    background-color: #d6ffc8;
+    /* border: 1px solid #5bde30; */
+    /* background-color: #d6ffc8; */
+    .input-exam {
+        background-color: #00b9df;
+        color: #fff;
+        border: 3px solid #00b9df;
+    }
 }
 .word-card.wrong {
-    border: 1px solid rgb(249 63 63);
-    background-color: #e8bbbb;
+    /* border: 1px solid rgb(249 63 63);
+    background-color: #e8bbbb; */
+    .input-exam {
+        background-color: #fd5854;
+        color: #fff;
+        border: 3px solid #fd5854;
+    }
 }
 .input-exam {
-    width: 50px;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    color: #d4d4d4;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 3px;
+    border: 2px solid #d4d4d4;
+    line-height: 30px;
+    font-weight: bold;
+    caret-color: #00b9df;
+    &:focus,
+    &:focus-visible {
+        border: 3px solid #00b9df;
+        outline: none;
+    }
+}
+
+.footer {
+    height: 60px;
+    background-color: #00b9df;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    .text {
+        margin-top: 20px;
+        color: #fff;
+    }
 }
 </style>

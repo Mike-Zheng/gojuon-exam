@@ -2,8 +2,8 @@
   "name": "gojuon-exam",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite --base=/gojuon-exam/  --assetsDir=assets",
-    "build": "vite build --base=/gojuon-exam/ --assetsDir=assets",
+    "dev": "vite --base=/gojuon/  ",
+    "build": "vite build --base=/gojuon/ ",
     "serve": "vite preview"
   },
   "dependencies": {
