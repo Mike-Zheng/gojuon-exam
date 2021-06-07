@@ -1,28 +1,29 @@
 <template>
-    <div class="board horizontal">
-        <div
-            class="word-card"
-            v-for="(item, index) in textList"
-            :key="index"
-            :class="{
-                correct: item.isAnsCorrect == 1,
-                wrong: item.isAnsCorrect == -1,
-            }"
-        >
-            <span v-if="examType == 'hiragana'">{{ item.hira_unicode }}</span>
-            <span v-if="examType == 'katakana'">{{ item.kata_unicode }}</span>
+    <div class="board-containner">
+        <div class="board horizontal">
+            <div
+                class="word-card"
+                v-for="(item, index) in textList"
+                :key="index"
+                :class="{
+                    correct: item.isAnsCorrect == 1,
+                    wrong: item.isAnsCorrect == -1,
+                }"
+            >
+                <span v-if="examType == 'hiragana'">{{ item.hira_unicode }}</span>
+                <span v-if="examType == 'katakana'">{{ item.kata_unicode }}</span>
 
-            <div class="input-exam" v-if="item.showAns">{{ item.roma }}</div>
-            <input
-                v-else
-                :ref="'input' + index"
-                v-model="item.inputValue"
-                class="input-exam"
-                @input="validAns($event, item, index)"
-            />
+                <div class="input-exam" v-if="item.showAns">{{ item.roma }}</div>
+                <input
+                    v-else
+                    :ref="'input' + index"
+                    v-model="item.inputValue"
+                    class="input-exam"
+                    @input="validAns($event, item, index)"
+                />
+            </div>
         </div>
     </div>
-
     <div class="footer">
         <div class="text">{{ corrected.length }}/{{ textLength }}</div>
     </div>
@@ -117,9 +118,9 @@ export default {
                 nextRef.focus();
             });
         },
-        reset(){
-            this.init()
-        }
+        reset() {
+            this.init();
+        },
     },
 };
 </script>
@@ -203,5 +204,12 @@ export default {
         margin-top: 20px;
         color: #fff;
     }
+}
+
+.board-containner {
+    position: absolute;
+    top: 140px;
+    bottom: 60px;
+    overflow-y: auto;
 }
 </style>
