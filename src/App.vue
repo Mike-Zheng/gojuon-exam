@@ -28,9 +28,6 @@
     </div>
 
     <Exam ref="exam" :examType="pickedType" />
-
-     
-
 </template>
 
 <script>
@@ -47,12 +44,11 @@ export default {
             pickedType: 'hiragana',
         };
     },
-    methods:{
-        reset(){
-            this.$refs.exam.reset()
-        }
-
-    }
+    methods: {
+        reset() {
+            this.$refs.exam.reset();
+        },
+    },
 };
 </script>
 
@@ -75,10 +71,14 @@ export default {
         right: 80px;
 
         .logo {
+            background-image: url('./assets/logo_w.png');
             width: 100px;
             height: 100px;
             background-color: #00b9df;
             border-radius: 50%;
+            background-size: 70% 70%;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
     }
 }
