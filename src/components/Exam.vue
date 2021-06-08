@@ -110,6 +110,9 @@ export default {
                     this.focus(index + 1);
                 }
             }
+
+            //force to lowercase
+            event.target.value = event.target.value.toLowerCase();
         },
         focus(index) {
             this.$nextTick(() => {
@@ -211,5 +214,25 @@ export default {
     top: 140px;
     bottom: 60px;
     overflow-y: auto;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {
+    .board-containner {
+        top: 150px;
+        bottom: 30px;
+        .board {
+            margin: 0 auto;
+        }
+    }
+    .word-card {
+        width: 55px;
+    }
+
+    .footer {
+        height: 30px;
+        .text {
+            margin-top: 7px;
+        }
+    }
 }
 </style>
