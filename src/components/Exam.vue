@@ -177,17 +177,22 @@ export default {
     }
 }
 .input-exam {
-    display: inline-block;
-    height: 30px;
-    width: 30px;
+    outline: none;
+    padding: 0;
+    box-shadow: none;
+    appearance: none;
+    height: 40px;
+    width: 40px;
     color: #d4d4d4;
     font-size: 18px;
     text-align: center;
     border-radius: 3px;
     border: 2px solid #d4d4d4;
-    line-height: 30px;
+    line-height: 40px;
     font-weight: bold;
     caret-color: #00b9df;
+    box-sizing: content-box;
+    background-clip: padding-box;
     &:focus,
     &:focus-visible {
         border: 3px solid #00b9df;
@@ -199,7 +204,7 @@ export default {
     height: 60px;
     background-color: #00b9df;
 
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
@@ -214,6 +219,7 @@ export default {
     top: 140px;
     bottom: 60px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {

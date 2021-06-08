@@ -2,7 +2,7 @@
   "name": "gojuon-exam",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite --base=/gojuon/  ",
+    "dev": "vite --base=/gojuon/  --host 0.0.0.0",
     "build": "vite build --base=/gojuon/ ",
     "serve": "vite preview"
   },
