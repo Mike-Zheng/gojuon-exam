@@ -95,7 +95,7 @@ export default {
             // error
             const stringLength = item.inputValue.length;
             for (let i = 0; i < stringLength; i++) {
-                if (item.inputValue[i] !== item.roma[i]) {
+                if (item.inputValue.toLowerCase()[i] !== item.roma[i]) {
                     item.isAnsCorrect = -1;
                 }
             }
@@ -104,7 +104,7 @@ export default {
                 item.isAnsCorrect = 0;
             }
 
-            if (item.inputValue === item.roma) {
+            if (item.inputValue.toLowerCase() === item.roma) {
                 item.isAnsCorrect = 1;
                 if (index != this.textLength - 1) {
                     this.focus(index + 1);
