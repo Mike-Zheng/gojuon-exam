@@ -190,4 +190,46 @@ export default {
         }
     }
 }
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+    .header {
+        .desc {
+            width: 180px;
+            word-break: break-all;
+            text-align: left;
+            right: 90px;
+            top: 16px;
+        }
+        .logo-wrapper {
+            right: 0px;
+
+            .logo {
+                width: 90px;
+                height: 90px;
+            }
+        }
+    }
+
+    .toolbar {
+        padding: 0 20px;
+        margin-top: 10px;
+        .toolbar__tab--button {
+            line-height: 30px;
+            height: 30px;
+            padding: 0 10px;
+        }
+        .toolbar__divide-line {
+            line-height: 28px;
+            height: 26px;
+        }
+        .toolbar__tab {
+            label {
+                line-height: 28px;
+                height: 26px;
+                padding: 0 10px;
+            }
+        }
+    }
+}
 </style>

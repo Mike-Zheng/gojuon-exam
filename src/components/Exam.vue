@@ -235,4 +235,24 @@ export default {
         }
     }
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+    .board-containner {
+        top: 105px;
+        bottom: 30px;
+        .board {
+            margin: 0 auto;
+        }
+    }
+    .word-card {
+        width: 53px;
+    }
+
+    .footer {
+        height: 30px;
+        .text {
+            margin-top: 7px;
+        }
+    }
+}
 </style>
