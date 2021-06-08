@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style>
-.board {
+/* .board {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -49,5 +49,5 @@ export default {
   height: 120px;
   border: 1px solid #ccc;
   margin: -1px;
-}
+} */
 </style>

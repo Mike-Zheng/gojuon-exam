@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import Hiragana from "./components/Hiragana.vue";
+// import Hiragana from "./components/Hiragana.vue";
 import Exam from "./components/Exam.vue";
 export default {
   name: "App",
   components: {
-    Hiragana,
+    // Hiragana,
     Exam,
   },
   data() {
