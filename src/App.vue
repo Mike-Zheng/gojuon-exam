@@ -76,8 +76,8 @@ export default {
             height: 100px;
             background-color: #00b9df;
             border-radius: 50%;
-            background-size: 70% 70%;
-            background-position: center center;
+            background-size: 100% 100%;
+            background-position: -3px center;
             background-repeat: no-repeat;
         }
     }
