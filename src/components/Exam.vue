@@ -108,7 +108,8 @@ export default {
             const stringLength = item.inputValue.length;
             for (let i = 0; i < stringLength; i++) {
                 if (
-                    item.inputValue.toLowerCase()[i] !== item.roma[i]
+                    item.inputValue.toLowerCase()[i] !== item.roma[i] &&
+                    item.inputValue.toLowerCase()[i] !== item.roma2[i]
                 ) {
                     item.isAnsCorrect = -1;
                 }
