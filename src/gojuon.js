@@ -539,7 +539,7 @@ export const basic = [
     kata_han_unicode: "",
   },
   {
-    roma: "o",
+    roma: "wo",
     hira_han: "遠",
     hira_han_unicode: "\u9060",
     hira: "を",

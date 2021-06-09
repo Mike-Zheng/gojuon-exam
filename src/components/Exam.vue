@@ -1,5 +1,4 @@
 <template>
-    <div style="margin-top: 20px">{{ corrected.length }}/{{ textLength }}</div>
     <div class="board-container">
         <div class="board">
             <div
@@ -25,6 +24,7 @@
             </div>
         </div>
     </div>
+    <div class="result" style="margin-top: 20px">{{ corrected.length }}/{{ textLength }}</div>
 </template>
 
 <script>
@@ -86,7 +86,6 @@ export default {
             //force lowercase
             event.target.value = event.target.value.toLowerCase();
 
-            
             // 放棄
             if (item.inputValue[0] === ' ' || item.inputValue.split('').indexOf(' ') > -1) {
                 item.isAnsCorrect = -1;
@@ -126,11 +125,13 @@ export default {
 
 <style>
 .board-container {
-    margin: 50px 100px;
+    margin: 20px 10%;
+    background-color: #fff;
 }
 .board {
+    padding: 20px;
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     flex-wrap: wrap;
     justify-content: start;
     align-content: stretch;
@@ -145,19 +146,36 @@ export default {
     align-items: center;
     width: 60px;
     height: 60px;
-    border: 1px dotted rgb(246 246 246);
+    border: 1px dotted transparent;
     margin: -1px;
     font-size: 18px;
+    color: #35404b;
 }
 .word-card.correct {
-    border: 1px solid #5bde30;
-    background-color: #d6ffc8;
+    border: 1px solid #5485e7;
+    background-color: #f0f5ff;
 }
 .word-card.wrong {
-    border: 1px solid rgb(249 63 63);
-    background-color: #e8bbbb;
+    border: 1px solid #f7876f;
+    background-color: #fdf5f1;
 }
 .input-exam {
     width: 50px;
+    background-color: #f3f6f8;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.result {
+    background-color: #fff;
+    margin: 0 10%;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    color: #35404b;
 }
 </style>
