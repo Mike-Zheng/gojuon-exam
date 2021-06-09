@@ -171,20 +171,20 @@ export default {
 
     .toolbar {
         padding: 0 20px;
-        margin-top: 35px;
+        margin-top: 20px;
         .toolbar__tab--button {
-            line-height: 50px;
-            height: 50px;
+            line-height: 40px;
+            height: 40px;
             padding: 0 10px;
         }
         .toolbar__divide-line {
-            line-height: 46px;
-            height: 46px;
+            line-height: 36px;
+            height: 36px;
         }
         .toolbar__tab {
             label {
-                line-height: 46px;
-                height: 46px;
+                line-height: 36px;
+                height: 36px;
                 padding: 0 10px;
             }
         }

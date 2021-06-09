@@ -246,7 +246,7 @@ export default {
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {
     .board-containner {
-        top: 150px;
+        top: 130px;
         bottom: 30px;
         .board {
             margin: 0 auto;
