@@ -1,5 +1,5 @@
 <template>
-    <div class="board-containner">
+    <div id="scroller" class="board-containner">
         <div class="board horizontal">
             <div
                 class="word-card"
@@ -26,6 +26,7 @@
     </div>
     <div class="footer">
         <div class="text">{{ corrected.length }}/{{ textLength }}</div>
+        <!-- <div>{{ scrollTop }}</div> -->
     </div>
 </template>
 
@@ -38,6 +39,7 @@ export default {
             gojuon: basic,
             textList: [],
             textLength: 100,
+            scrollTop: 0,
         };
     },
     props: {
@@ -60,8 +62,18 @@ export default {
     },
     mounted() {
         this.init();
+
+        /*
+         document.addEventListener('focusout', (e) => {
+             document.getElementById('scroller').scrollTop = this.scrollTop;
+         });
+         */
+        document.getElementById('scroller').addEventListener('scroll', this.detectScroll);
     },
     methods: {
+        detectScroll(e) {
+            this.scrollTop = document.getElementById('scroller').scrollTop;
+        },
         init() {
             this.textList = [];
 
@@ -95,7 +107,9 @@ export default {
             // error
             const stringLength = item.inputValue.length;
             for (let i = 0; i < stringLength; i++) {
-                if (item.inputValue.toLowerCase()[i] !== item.roma[i]) {
+                if (
+                    item.inputValue.toLowerCase()[i] !== item.roma[i]
+                ) {
                     item.isAnsCorrect = -1;
                 }
             }
@@ -104,7 +118,7 @@ export default {
                 item.isAnsCorrect = 0;
             }
 
-            if (item.inputValue.toLowerCase() === item.roma) {
+            if (item.inputValue.toLowerCase() === item.roma || item.inputValue.toLowerCase() === item.roma2) {
                 item.isAnsCorrect = 1;
                 if (index != this.textLength - 1) {
                     this.focus(index + 1);
@@ -164,7 +178,7 @@ export default {
     .input-exam {
         background-color: #00b9df;
         color: #fff;
-        border: 3px solid #00b9df;
+        border: 2px solid #00b9df;
     }
 }
 .word-card.wrong {
@@ -173,7 +187,7 @@ export default {
     .input-exam {
         background-color: #fd5854;
         color: #fff;
-        border: 3px solid #fd5854;
+        border: 2px solid #fd5854;
     }
 }
 .input-exam {
@@ -186,7 +200,7 @@ export default {
     color: #d4d4d4;
     font-size: 18px;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 8px;
     border: 2px solid #d4d4d4;
     line-height: 40px;
     font-weight: bold;
@@ -195,7 +209,7 @@ export default {
     background-clip: padding-box;
     &:focus,
     &:focus-visible {
-        border: 3px solid #00b9df;
+        border: 2px solid #00b9df;
         outline: none;
     }
 }
@@ -220,6 +234,13 @@ export default {
     bottom: 60px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+
+    &.disable-scroll {
+        position: fixed;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+    }
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {
