@@ -1,5 +1,8 @@
 <template>
     <!-- <Exam :examType="'hiragana'" /> -->
+    <transition name="fade">
+        <Splash v-if="isLoading" marginTop="50%"></Splash>
+    </transition>
 
     <div class="header">
         <div class="desc">輸入答案即可開始測驗，按空白鍵顯示答案呦!</div>
@@ -32,17 +35,25 @@
 
 <script>
 // import Hiragana from "./components/Hiragana.vue";
+import Splash from './components/Splash.vue';
 import Exam from './components/Exam.vue';
 export default {
     name: 'App',
     components: {
         // Hiragana,
+        Splash,
         Exam,
     },
     data() {
         return {
+            isLoading: true,
             pickedType: 'hiragana',
         };
+    },
+    mounted() {
+        setTimeout(() => {
+            this.isLoading = false;
+        }, 2000);
     },
     methods: {
         reset() {
@@ -234,5 +245,15 @@ export default {
             }
         }
     }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to
+/* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
 }
 </style>
