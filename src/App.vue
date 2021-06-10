@@ -58,6 +58,7 @@ export default {
     background-color: #00b9df;
     box-shadow: 3px 3px 7px 6px rgb(195 195 195 / 46%);
     position: relative;
+    transition: all 0.2s ease;
     .desc {
         font-size: 16px;
         color: #fff;
@@ -88,11 +89,12 @@ export default {
     text-align: left;
     padding: 10px 100px;
     .toolbar__tab--button {
+        transition: all 0.2s ease;
         padding: 0px 20px;
         cursor: pointer;
         font-weight: bold;
 
-        border: solid 2px #d4d4d4;
+        border: solid 2px #c5c5c5;
 
         border-radius: 6px;
         color: #fff;
@@ -113,6 +115,7 @@ export default {
         display: inline-block;
         margin-right: 10px;
         vertical-align: top;
+        transition: all 0.2s ease;
 
         input {
             position: absolute;
@@ -173,7 +176,7 @@ export default {
         padding: 0 20px;
         margin-top: 20px;
         .toolbar__tab--button {
-            line-height: 40px;
+            line-height: 38px;
             height: 40px;
             padding: 0 10px;
         }
@@ -215,17 +218,17 @@ export default {
         padding: 0 20px;
         margin-top: 10px;
         .toolbar__tab--button {
-            line-height: 30px;
+            line-height: 26px;
             height: 30px;
             padding: 0 10px;
         }
         .toolbar__divide-line {
-            line-height: 28px;
+            line-height: 26px;
             height: 26px;
         }
         .toolbar__tab {
             label {
-                line-height: 28px;
+                line-height: 26px;
                 height: 26px;
                 padding: 0 10px;
             }

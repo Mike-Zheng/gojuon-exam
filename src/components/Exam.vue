@@ -98,6 +98,7 @@ export default {
         },
         validAns(event, item, index) {
             // 放棄
+            item.isAnsCorrect = 0;
             if (item.inputValue[0] === ' ' || item.inputValue.split('').indexOf(' ') > -1) {
                 item.isAnsCorrect = -1;
                 item.showAns = true;
@@ -107,11 +108,19 @@ export default {
             // error
             const stringLength = item.inputValue.length;
             for (let i = 0; i < stringLength; i++) {
-                if (
-                    item.inputValue.toLowerCase()[i] !== item.roma[i] &&
-                    item.inputValue.toLowerCase()[i] !== item.roma2[i]
-                ) {
-                    item.isAnsCorrect = -1;
+                console.log(item.inputValue.toLowerCase()[i]);
+
+                if (item.hasOwnProperty('roma2') && item.roma2.length > 0) {
+                    if (
+                        item.inputValue.toLowerCase()[i] !== item.roma[i] &&
+                        item.inputValue.toLowerCase()[i] !== item.roma2[i]
+                    ) {
+                        item.isAnsCorrect = -1;
+                    }
+                } else {
+                    if (item.inputValue.toLowerCase()[i] !== item.roma[i]) {
+                        item.isAnsCorrect = -1;
+                    }
                 }
             }
 
@@ -161,6 +170,7 @@ export default {
     flex-direction: row;
 }
 .word-card {
+    transition: all 0.2s ease;
     display: flex;
     flex-direction: column;
     /* flex-grow: 1; */
@@ -208,6 +218,7 @@ export default {
     caret-color: #00b9df;
     box-sizing: content-box;
     background-clip: padding-box;
+    transition: all .1s ease;
     &:focus,
     &:focus-visible {
         border: 2px solid #00b9df;
