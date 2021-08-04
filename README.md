@@ -1,20 +1,24 @@
-# Japanese kana syllabary learning tool. 五十音の学習ツール.
+<p align="center">
+  <a href="https://mike-zheng.github.io/gojuon" target="_blank" rel="noopener noreferrer">
+    <p align="center"><img width="120" src="./logo.png" alt="五十音の学習ツール"></p>
+  </a>
+</p>
 
-以鍵盤為主的五十音練習器。
+<p align="center">
+  <img src="https://img.shields.io/badge/vue-v3.0.5-green" alt="vue-v3.0.5">
+  <img src="https://img.shields.io/badge/vite-v2.3.5-blue" alt="vite v2.3.5">
+  <img src="https://img.shields.io/badge/node-v14.15.0-red" alt="node v14.15.0">
+</p>
 
-> https://mike-zheng.github.io/gojuon-exam
+> PC Notes:  https://mike-zheng.github.io/posts/gojuon50/
 
+> App Notes:  https://mike-zheng.github.io/posts/gojuonap/
 
-![app screen](app.png)
+## 五十音の学習ツール
 
+小遊戲性質的羅馬拼音五十音練習。
 
-
-## mobile 版本
 >2021/06/14
-
-主要是以小遊戲性質的方式不僅可以提高學習的意願，
-需求就是介面簡單乾淨，容易使用的羅馬拼音50音練習。
-
 * 遊戲性新介面
 * 鍵盤練習為主輸入羅馬英文
 * 隨機出題
@@ -25,9 +29,46 @@
 * 加入平假名片假名
 * 字元支援增強
 
+
+--------------------------------------
+## Installation & Develop
+
+> node -v 14.15.0
+
+``` bash
+npm install 
+
+npm run dev
+```
+
+--------------------------------------
+
+## Play Ground
+
+**pc** 
+
+https://mike-zheng.github.io/gojuon-exam
+
+**for mobile**
+>2021/06/14
+
+https://mike-zheng.github.io/gojuon
+
+# Japanese kana syllabary learning tool. 五十音の学習ツール.
+
+## App Snapshot
+
+
+
+**pc** 
+
+![app screen](app.png)
+
+
+**for mobile**
+>2021/06/14
+
+![app screen](app_2.png)
 ![mobile screen](app_all.png)
 
 
-* 工具網址 https://mike-zheng.github.io/gojuon/
-
-* 開發歷程 https://mike-zheng.github.io/posts/gojuonap/
