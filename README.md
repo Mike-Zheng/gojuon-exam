@@ -54,7 +54,7 @@ https://mike-zheng.github.io/gojuon-exam
 
 https://mike-zheng.github.io/gojuon
 
-# Japanese kana syllabary learning tool. 五十音の学習ツール.
+
 
 ## App Snapshot
 
